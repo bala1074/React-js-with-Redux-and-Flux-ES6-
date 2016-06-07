@@ -1,0 +1,26 @@
+{
+  "name": "ReactApp",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "TARUN"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bower"
+  ],
+  "homepage": "https://github.com/kumartarun/ReactCastTraining",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "~2.2.4"
+  }
+}
+
+
