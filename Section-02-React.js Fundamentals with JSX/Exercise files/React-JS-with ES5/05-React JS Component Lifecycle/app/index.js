@@ -1,57 +1,56 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
-	var Note = React.createClass({
-	getInitialState: function() {
-		return {editing: false , text : ''}
-	},
-	edit: function() {
-		this.setState({editing: true});
-	},
-	getText : function(event){
-                    console.log(event.target.value);
-                    this.setState({text: event.target.value});
-	},
-	save: function() {
-		this.setState({editing: false});
-		var val = this.refs.newText.getDOMNode().value;
-		this.setState({text: val});
-	},
-	remove: function() {
-		alert('removing note');
-		this.setState({editing: false});
-		this.setState({text: ''});
-	},
-	renderDisplay: function() {
-		return (
-			<div className="note">
-				<p>{this.state.text} </p>
-				<span>
-					<button onClick={this.edit} name="Edit" value="Edit"
-							className="btn btn-primary glyphicon glyphicon-pencil"/>
-					<button onClick={this.remove} name="Delete" value="delete"
-							className="btn btn-danger glyphicon glyphicon-trash"/>
-				</span>
-			</div>
-			);
-	},
-	renderForm: function() {
-		return (
-			<div className="note">
-			<textarea ref="xyz" onChange={this.getText}  defaultValue={this.props.children}
-			className="form-control"></textarea>
-			<button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
-			</div>
-			)
-	},
-	render: function() {
-		if (this.state.editing) {
-			return this.renderForm();   //html form
-		}
-		else {
-			return this.renderDisplay(); //rendering buttons
-		}
-	}
-});
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-ReactDOM.render(<Note>Hello World from TextArea</Note>,
-	document.getElementById('app'));
+var Counter = React.createClass({
+	incrementCount: function(){
+		this.setState({
+			count: this.state.count + 1
+		});
+	},
+	getDefaultProps: function(){
+		console.log("getDefaultProps.........");
+		return {
+			count: 0
+		}
+	},
+	getInitialState: function(){
+		console.log("getInitialState.........");
+		return {
+			count: 0
+		}
+	},
+	componentWillMount : function() {
+		console.log('Component WILL MOUNT!')
+			//
+		},
+		componentDidMount: function(){
+			console.log('Component DID MOUNT!')
+		},
+		componentWillUnmount: function(){
+			console.log('Component WILL UNMOUNT!')
+		},
+		shouldComponentUpdate: function(nextProps, nextState){
+			// return a boolean value
+			console.log("shouldComponentUpdate...........")
+			return false;
+		},
+		componentWillUpdate: function(nextProps, nextState){
+			// perform any preparations for an upcoming update
+			console.log("componentWillUpdate...........")
+		},
+		componentDidUpdate: function(prevProps, prevState){
+			console.log("componentDidUpdate...........")
+		},
+		render: function(){
+			console.log("render function.........");
+			return (
+				<div styleName=".counter">
+				<h1>{this.state.count}</h1>
+				<button type="button" onClick={this.incrementCount}>Increment</button>
+				</div>
+				);
+		}
+		});
+
+ReactDOM.render(<Counter />, document.getElementById('app'));
+

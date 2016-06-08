@@ -44,9 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
-	(function webpackMissingModule() { throw new Error("Cannot find module \"run\""); }());
-	(function webpackMissingModule() { throw new Error("Cannot find module \"watch\""); }());
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
@@ -63,23 +61,19 @@
 
 	    render: function render() {
 	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	                'h1',
-	                null,
-	                'Hello World'
-	            ),
-	            React.createElement(
-	                'p',
-	                null,
-	                'This is some text'
-	            )
+	            'h1',
+	            { className: 'title' },
+	            'Hello World! My Name is ',
+	            this.props.name
 	        );
 	    }
 	});
 
-	ReactDOM.render(React.createElement(HelloWorld, null), document.body);
+	ReactDOM.render(React.createElement(
+	    HelloWorld,
+	    { name: 'Mahir' },
+	    'hello World'
+	), document.body);
 
 /***/ },
 /* 2 */

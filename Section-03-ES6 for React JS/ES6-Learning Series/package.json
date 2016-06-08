@@ -1,0 +1,24 @@
+{
+  "name": "react-es6",
+  "version": "1.0.0",
+  "description": " Fundamentals in ES6",
+  "main": "server.js",
+  "dependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "fs": "0.0.2",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "build": "webpack --progress --profile --colors",
+    "watch": "webpack-dev-server",
+    "test": "echo \"No unit tests and e2e tests yet\" && exit 1"
+  },
+  "author": "TKS",
+  "license": "ISC"
+}
