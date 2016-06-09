@@ -5,16 +5,40 @@
   
 let foo = ["Hello", "World"];
 
+function letTest() {
+  let y = 31;
+   {console.log(y)}
+  if (true) {
+    let y = 71;  // different variable
+    console.log(y);  // 71
+  }
+  console.log(y);  // 31
+}
+letTest()
+
+
 function getValue(condition) {
     if (condition) {
         let value = 'blue';
-        return value;
-    } else {
+          {
+            let value = 'yellow'
+                 {
+                console.log(value);  
+                let value = 'green'; 
+                console.log(value);  
+                 }
+          }
+        return value; 
+    } 
+
+
+    else {
         // value doesn't exist here
         return null;
     }
     // value doesn't exist here
 }
+getValue(true);
 
 function f() {
     let  x;

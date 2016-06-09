@@ -21,7 +21,7 @@ module.exports = {
     devServer: {
     inline: true,
     contentBase: './lessons/',
-    port: 8082
+    port: 8000
   },
   plugins: [HTMLWebpackPluginConfig]
 };

@@ -51,27 +51,25 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
-	function varTest() {
-	    {
-	        var x = 90;
-	        var y = 90;
-
-	        console.log(x);
+	function getValue(condition) {
+	    if (condition) {
+	        var value = 'blue';
 	        {
-	            var _y = 90;
-	            console.log(_x);
-	            var _x = 80;
+	            var _value = 'yellow';
 	            {
-	                var _y2 = 90;
-	                var _x2 = 60;
-	                console.log(_x2);
+	                console.log(_value2);
+	                var _value2 = 'green';
+	                console.log(_value2);
 	            }
 	        }
+	        return value;
+	    } else {
+	        return null;
 	    }
 	}
-	varTest();
+	getValue(true);
 
 /***/ }
 /******/ ]);
