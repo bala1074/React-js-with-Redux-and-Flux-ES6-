@@ -11,11 +11,11 @@ class App extends React.Component {
 class Button extends React.Component {
   render(){
     return <button>{this.props.children}</button>
+    // I <span className="glyphicon glyphicon-heart"></span>  React
   }
 }
 
-const Heart = () => <span className="glyphicon glyphicon-heart"></span>
-
+const Heart = props => <span className="glyphicon glyphicon-heart"></span>
 
 
 

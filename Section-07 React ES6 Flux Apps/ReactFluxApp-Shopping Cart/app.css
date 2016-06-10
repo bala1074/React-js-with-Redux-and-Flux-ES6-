@@ -1,0 +1,14 @@
+.reveal .slides>section.present, .reveal .slides>section>section.present {
+    display: block;
+    z-index: 11;
+    opacity: 1;
+}
+.reveal .slides>section, .reveal .slides>section>section {
+    height: 700px;
+    font-weight: inherit;
+    padding: 0;
+}
+.reveal.slide section {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}

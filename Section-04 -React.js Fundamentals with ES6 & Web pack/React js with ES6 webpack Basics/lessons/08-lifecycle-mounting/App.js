@@ -14,7 +14,7 @@ class App extends React.Component {
   }
   render(){
     console.log('rendering!')
-    return <div><button onClick={this.update} value="UPDATE"/><h1>Component</h1></div>
+    return <div><button className="btn btn-primary" onClick={this.update} value="UPDATE">UPDATE</button><h1>Component</h1></div>
   }
   componentDidMount(){
     console.log('mounted')
@@ -23,6 +23,9 @@ class App extends React.Component {
     console.log('bye!')
   }
 }
+
+
+
 
 class Wrapper extends React.Component {
   constructor(){

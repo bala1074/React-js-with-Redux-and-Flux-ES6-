@@ -1,21 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App  from './modules/App';
- var app = [
-      {id: 1, name: "Simon Bailey"},{id: 2, name: "Thomas Burleson"},
-      {id: 3, name: "Will Button"},{id: 4, name: "Ben Clinkinbeard"},
-      {id: 5, name: "Kent Dodds"},{id: 6, name: "Trevor Ewen"},
-      {id: 7, name: "Aaron Frost"},{id: 8, name: "Joel Hooks"},
-      {id: 9, name: "Jafar Husain"},{id: 10, name: "Tim Kindberg"},
-      {id: 11, name: "John Lindquist"},
-      {id: 12, name: "Joe Maddalone"},
-      {id: 13, name: "Tyler McGinnis"},{id: 14, name: "Scott Moss"},
-      {id: 15, name: "Robert Penner"},{id: 16, name: "Keith Peters"},
-      {id: 17, name: "Lukas Ruebbelke"},
-      {id: 18, name: "Brett Shollenberger"}
-    ]
-ReactDOM.render(
-  <App item={app}/>,
-  document.getElementById('app')
-);
+import React, {Component }  from 'react';
+import {render} from 'react-dom';
+import SearchBar from './components/search_bar'
+import VideoList from './components/video_list'
+import VideoDetail from './components/video_detail'
+import YTSerach from 'youtube-api-search';
+const API_KEY = 'AFEFSDADASC78S78CX8CD57';
 
+class App extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			videos : [],
+			selectedVideo : videos[0]
+		};
+		this.videoSearch('React');
+	}
+              videoSearch(searchkey){
+               YTSerach({key :  API_KEY , term :  searchkey} , (videos) =>{
+                       this.setState({
+                       	videos : videos,
+                       	selectedVideo : videos[0]
+                       })
+               })
+              }
+	render(){
+		return(<div>
+                             <SearchBar  OnSearchInputChange={term => { this.videoSearch(term)}} />
+                             <VideoDetail  video={this.state.selectedVideo} />
+                             <VideoList    onVideoSelect={video => this.setState({selectedVideo :  video)}
+                              videos={this.state.videos} />
+		</div>)
+	}
+}
+
+render(<App/>, document.getElementById('app'));

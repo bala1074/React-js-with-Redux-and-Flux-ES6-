@@ -10,6 +10,7 @@ class App extends React.Component {
     }
     //this.update = this.update.bind(this) 
   }
+  
   render(){
     return (
       <div>
