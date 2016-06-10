@@ -1,6 +1,6 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import TodoConstants from '../constants/TodoConstants';
-import assign from 'object-assign';
+
 
 var EventEmitter = require('events').EventEmitter;
 
@@ -19,7 +19,7 @@ function create (text) {
 }
 
 function update (id, updates) {
-  _todos[id] = assign({}, _todos[id], updates);
+  _todos[id] = Object.assign({}, _todos[id], updates);
 }
 
 function updateAll (updates) {
@@ -94,7 +94,7 @@ AppDispatcher.register((action) => {
   }
 });
 
-var TodoStore = assign({}, EventEmitter.prototype, {
+var TodoStore = Object.assign({}, EventEmitter.prototype, {
   areAllComplete () {
     for (var id in _todos) {
       if (!_todos[id].complete) {

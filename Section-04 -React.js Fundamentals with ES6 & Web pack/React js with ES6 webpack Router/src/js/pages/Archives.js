@@ -7,7 +7,6 @@ export default class Archives extends React.Component {
     const { query } = this.props.location;
     const { params } = this.props;
     const { article } = params;
-    const { date, filter } = query;
 
     const Articles = [
       "Some Article",
@@ -18,12 +17,16 @@ export default class Archives extends React.Component {
       "Partial Article",
       "American Article",
       "Mexican Article",
-    ].map((title, i) => <Article key={i} title={title}/> );
+    ].filter((item) =>  { 
+      if(article == item){
+        return <Article key={item} title={item}/>
+      }
+       } );
 
     return (
       <div>
         <h1>Archives</h1>
-        article: {article}, date: {date}, filter: {filter}
+        article: {article}
         <div class="row">{Articles}</div>
       </div>
     );
