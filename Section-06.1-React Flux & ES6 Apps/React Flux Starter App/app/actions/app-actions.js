@@ -2,7 +2,6 @@ var  Appconst = require( '../constant/Appconst' );
 var  Appdispatcher = require( '../dispatcher/app-dispatcher')
 
 var AppActions ={
-
 	addItem : function(item){
 		Appdispatcher.dispatch({
 			actionType : Appconst.ADD_ITEM,

@@ -17,7 +17,6 @@ var Catalog = React.createClass({
 		    <td>{item.title}</td>
 		    <td>${item.cost}</td>
 		<td><AddToCart item={item} /></td>
-
 			</tr>
 		);
 	})

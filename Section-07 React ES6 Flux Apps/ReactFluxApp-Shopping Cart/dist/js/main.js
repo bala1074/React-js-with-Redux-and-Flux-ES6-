@@ -20549,7 +20549,6 @@ var Catalog = React.createClass({displayName: "Catalog",
 		    React.createElement("td", null, item.title), 
 		    React.createElement("td", null, "$", item.cost), 
 		React.createElement("td", null, React.createElement(AddToCart, {item: item}))
-
 			)
 		);
 	})

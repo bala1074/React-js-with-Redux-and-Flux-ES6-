@@ -7,6 +7,8 @@ var concat = require('gulp-concat');   // concat js and css
 var minify = require('gulp-minify-css');  // contact only css
 
 
+const sync = browserSync.create();
+
 gulp.task('browserify', function() {
     browserify('./src/js/main.js') // ES6 only
       .transform('reactify') // es6 TO es5
