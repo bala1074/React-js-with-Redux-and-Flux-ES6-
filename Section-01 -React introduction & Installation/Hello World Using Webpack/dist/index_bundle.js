@@ -56,6 +56,7 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(33);
 
+	// bundler and jsx tranformer
 	var HelloWorld = React.createClass({
 	  displayName: 'HelloWorld',
 
@@ -71,13 +72,13 @@
 	      React.createElement(
 	        'p',
 	        null,
-	        ' Hello World! I am java developer'
+	        ' Hello World! I am React Developer'
 	      )
 	    );
 	  }
 	});
 
-	ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('app'));
+	ReactDOM.render(React.createElement(HelloWorld, { name: 'tarun' }), document.getElementById('app'));
 
 	// webpack is bundeling everything in one common bundle.js
 
